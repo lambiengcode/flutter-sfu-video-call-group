@@ -1,4 +1,6 @@
-## Video Call Flutter App 📱
+## Video Call Flutter App (SFUs Architecture) 📱
+
+<img src="https://github.com/hongvinhmobile/flutter_webrtc_sfus/blob/master/screenshots/result.jpg?raw=true" width="200px" />
 
 ### Description:
 - This is sandbox video call application using Flutter and WebRTC.
