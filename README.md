@@ -14,4 +14,14 @@
 - Media servers which implement an SFU architecture include Jitsi and Janus.
 
 ### Quick start
-- Update Later
+
+#### Start WebRTC SFUs Server
+- Step 1: open **nodejs_sfus_server**
+- Step 2: run **yarn** or **npm i** for install packages
+- Step 3: run **yarn start** or **npm start** for start server
+- Server is running on port 5000, you can change port in **server.js**
+
+#### Mobile Application
+- Step 1: run **flutter pub get** for install flutter pub
+- Step 2: replace socket url by ip and port your server in **flutter_webrtc_sfus/lib/src/pages/home/home_page.dart**, line **79**
+- Step 3: run app and auto connect in call
