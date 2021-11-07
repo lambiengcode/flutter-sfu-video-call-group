@@ -6,6 +6,18 @@ import 'package:get_boilerplate/src/services/socket_emit.dart';
 import 'package:sdp_transform/sdp_transform.dart';
 import 'package:socket_io_client/socket_io_client.dart';
 
+Map<String, dynamic> configuration = {
+  'iceServers': [
+    {"urls": "stun:stun.jacknathan.tk:3478"},
+    {
+      "urls": "turn:turn.jacknathan.tk:3478",
+      "username": "ducanhzed",
+      "credential": "1507200a",
+    },
+  ],
+  'sdpSemantics': "unified-plan",
+};
+
 Socket socket;
 
 class HomePage extends StatefulWidget {
@@ -54,13 +66,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   _createPeerConnectionAnswer(socketId) async {
-    Map<String, dynamic> configuration = {
-      "iceServers": [
-        {"url": "stun:stun.stunprotocol.org"},
-      ],
-      "sdpSemantics": "unified-plan",
-    };
-
     RTC.RTCPeerConnection pc = await RTC.createPeerConnection(configuration);
 
     pc.onTrack = (track) {
@@ -76,7 +81,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void connectAndListen() async {
-    var urlConnectSocket = 'http://192.168.1.8:5000';
+    var urlConnectSocket = 'https://tugomu.tk';
     socket =
         io(urlConnectSocket, OptionBuilder().enableForceNew().setTransports(['websocket']).build());
     socket.connect();
@@ -183,12 +188,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   _createPeerConnection() async {
-    Map<String, dynamic> configuration = {
-      "iceServers": [
-        {"url": "stun:stun.stunprotocol.org"},
-      ]
-    };
-
     final Map<String, dynamic> offerSdpConstraints = {
       "mandatory": {
         "OfferToReceiveAudio": true,
