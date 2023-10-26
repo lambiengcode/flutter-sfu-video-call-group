@@ -1,3 +1,5 @@
+> :warning: **Warning:** This repository is no longer supported. An alternative project is available [here](https://github.com/lambiengcode/waterbus).
+
 ## Video Call Flutter App (SFUs Architecture) 📱
 
 <img src="https://github.com/hongvinhmobile/flutter_webrtc_sfus/blob/master/screenshots/result.jpg?raw=true" width="200px" />
